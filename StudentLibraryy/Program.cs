@@ -1,11 +1,22 @@
 ﻿class Book // created a class which has 4 pieces of information in it. In our case they are 3 strings & 1 int
 {
+    // Properties
     string Title;
     string Author;
     string ISBN;
     int NoOfPages;
 
-    void DisplayInfo() // created method, outputs 4 pieces of information
+    // Constructor for book object. Constructor always has to be the same as class name
+    // add a new instance of the book class
+    public Book(string bookTitle, string bookAuthor, string bookISBN, int bookNoOfPages) 
+    {
+        Title = bookTitle;
+        Author = bookAuthor;
+        ISBN = bookISBN;
+        NoOfPages = bookNoOfPages;
+    }
+
+    void DisplayInfo() // created method, outputs 4 pieces of information.
     {
         // Output the book information to the console
         Console.WriteLine("Book Information");
@@ -20,18 +31,9 @@
     static void Main(string[] args)
     {
         // Create a new instance of the book class. We use a lowercase b for an instance
-        Book book = new Book(); // book contains the 3 variables, title, author and ISBN. book is the instance
-
-        book.Title = "C# for beginners"; //This is a string and the new title for the book instance
-        book.Author = "Bill Gates"; //This is a string for the new author of the book instance
-        book.ISBN = "12345677";
-        book.NoOfPages = 200;
-
-        Book book2 = new Book(); // Second Book instance, cannot be the same as the first one
-        book2.Title = "C# Methods and classes"; // Second title
-        book2.Author = "Microsoft"; // second author
-        book2.ISBN = "07767114"; // second number
-        book2.NoOfPages = 50;
+        Book book = new Book("C# for beginners", "Bill Gates", "12345677", 200);
+        // Another Instance
+        Book book2 = new Book("Visual Studios 2022", "Microsoft", "123", 70);
 
         // Output book information to the console
         book.DisplayInfo(); // calling the method, taking information from book and pritning it out
